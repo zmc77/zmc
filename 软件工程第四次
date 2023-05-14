@@ -1,0 +1,184 @@
+void Subject_Output_Screen()
+{
+    printf("题目列表：\n");
+    for (int i = 0; i < problem_num; ++i) {
+        int id = 0;
+        int num;
+        int num_opera;
+        int N = rand() % 4 + 2;
+        bool f = true, flag = true;
+        double number;
+        printf("(%d)", i + 1);
+        if (if_file) {
+            fprintf(file, "(%d)  ", i + 1);
+        }
+        for (int j = 0; j < N; ++j) {
+            if (rand() % 2 && N > 2 && flag && if_bracket) {
+                printf("(");
+                if (if_file) fprintf(file, "(");
+                flag = false;
+                id = j;
+                / r += "(";
+            }
+            num = (rand() % abs(number_max - number_min)) + number_min;
+            number = num + (double)(rand() % 100) / 100;
+            num_opera = rand() % problem_operate;
+            if (back_operate == 2) {
+                num_opera += 2;
+            }
+            //不是小数
+            if (!if_decimal) {
+                / r += to_string(num);
+                printf("%d", num);
+            }
+            //是小数
+            else {
+                / r += to_string(number);
+                printf("%.2f", number);
+            }
+            //输出文件
+            if (if_file) {
+                if (!if_decimal) {
+                    fprintf(file, "%d", num);
+                }
+                else {
+                    fprintf(file, "%.2f", number);
+                }
+            }
+            if (id != j && rand() % 2 && !flag && f) {
+                printf(")");
+                if (if_file) fprintf(file, ")");
+                f = false;
+                / r += ")";
+            }
+            / r += subject_operator[num_opera];
+            printf("%s", subject_operator[num_opera]);
+            if (if_file) {
+                fprintf(file, "%s", subject_operator[num_opera]);
+            }
+        }
+ 
+        num = (rand() % (number_max - number_min)) + number_min;
+        number = num + (double)(rand() % 100) / 100;
+ 
+        if (!if_decimal) {
+            / r += to_string(num);
+            printf("%d", num);
+            if (if_file) {
+                fprintf(file, "%d", num);
+            }
+        }
+        else {
+            / r += to_string(number);
+            printf("%.2f", number);
+            if (if_file) {
+                fprintf(file, "%.2f", number);
+            }
+        }
+        if (f && !flag) {
+            printf(")");
+            if (if_file)fprintf(file, ")");
+            / r += ")";
+        }
+        printf("=\n");
+        if (if_file) {
+            fprintf(file, "=\n");
+        }
+    }
+    if (if_file) {
+        printf("\nquestion.txt文件生成成功啦！\n\n");
+    }
+    fclose(file);
+}
+void Subject_Output_Screen()
+{
+    printf("题目列表：\n");
+    for (int i = 0; i < problem_num; ++i) {
+        int id = 0;
+        int num;
+        int num_opera;
+        int N = rand() % 4 + 2;
+        bool f = true, flag = true;
+        double number;
+        printf("(%d)", i + 1);
+        if (if_file) {
+            fprintf(file, "(%d)  ", i + 1);
+        }
+        for (int j = 0; j < N; ++j) {
+            if (rand() % 2 && N > 2 && flag && if_bracket) {
+                printf("(");
+                if (if_file) fprintf(file, "(");
+                flag = false;
+                id = j;
+                / r += "(";
+            }
+            num = (rand() % abs(number_max - number_min)) + number_min;
+            number = num + (double)(rand() % 100) / 100;
+            num_opera = rand() % problem_operate;
+            if (back_operate == 2) {
+                num_opera += 2;
+            }
+            //不是小数
+            if (!if_decimal) {
+                / r += to_string(num);
+                printf("%d", num);
+            }
+            //是小数
+            else {
+                / r += to_string(number);
+                printf("%.2f", number);
+            }
+            //输出文件
+            if (if_file) {
+                if (!if_decimal) {
+                    fprintf(file, "%d", num);
+                }
+                else {
+                    fprintf(file, "%.2f", number);
+                }
+            }
+            if (id != j && rand() % 2 && !flag && f) {
+                printf(")");
+                if (if_file) fprintf(file, ")");
+                f = false;
+                / r += ")";
+            }
+            / r += subject_operator[num_opera];
+            printf("%s", subject_operator[num_opera]);
+            if (if_file) {
+                fprintf(file, "%s", subject_operator[num_opera]);
+            }
+        }
+ 
+        num = (rand() % (number_max - number_min)) + number_min;
+        number = num + (double)(rand() % 100) / 100;
+ 
+        if (!if_decimal) {
+            / r += to_string(num);
+            printf("%d", num);
+            if (if_file) {
+                fprintf(file, "%d", num);
+            }
+        }
+        else {
+            / r += to_string(number);
+            printf("%.2f", number);
+            if (if_file) {
+                fprintf(file, "%.2f", number);
+            }
+        }
+        if (f && !flag) {
+            printf(")");
+            if (if_file)fprintf(file, ")");
+            / r += ")";
+        }
+        printf("=\n");
+        if (if_file) {
+            fprintf(file, "=\n");
+        }
+    }
+    if (if_file) {
+        printf("\nquestion.txt文件生成成功啦！\n\n");
+    }
+    fclose(file);
+}
